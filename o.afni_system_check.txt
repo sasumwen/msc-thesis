@@ -1,0 +1,139 @@
+-------------------------------- general ---------------------------------
+architecture:         64bit ELF
+cpu type:             x86_64
+system:               Linux
+release:              6.11.0-1015-gcp
+version:              #15~24.04.1-Ubuntu SMP Thu Apr 24 20:41:05 UTC 2025
+distribution:         ubuntu 24.04 Noble Numbat
+number of CPUs:       48
+user:                 osasu
+apparent login shell: bash  (current shell is tcsh)
+shell RC file:        .tcshrc (exists)
+
+--------------------- AFNI and related program tests ---------------------
+which afni           : /home/osasu/abin/afni
+afni version         : Precompiled binary linux_ubuntu_24_64: May 23 2025 
+                     : AFNI_25.1.11 'Maximinus'
+AFNI_version.txt     : AFNI_25.1.11, linux_ubuntu_24_64, May 23 2025, official
+which python         : /home/osasu/anaconda3/bin/python
+python version       : 3.12.7
+which R              : /usr/bin/R
+R version            : R version 4.3.3 (x86_64-pc-linux-gnu)
+
+instances of various programs found in PATH:
+    afni    : 1   (/home/osasu/abin/afni)
+    R       : 1   (/usr/bin/R)
+    python  : 2 
+      /home/osasu/anaconda3/bin/python3.12
+      /usr/bin/python3.12
+    python2 : 0 
+    python3 : 2 
+      /home/osasu/anaconda3/bin/python3.12
+      /usr/bin/python3.12
+
+testing ability to start various programs...
+    afni                 : success
+    suma                 : success
+    3dSkullStrip         : success
+    3dAllineate          : success
+    3dRSFC               : success
+    SurfMesh             : success
+    3dClustSim           : success
+    build_afni.py        : success
+    uber_subject.py      : success
+    3dMVM                : success
+    rPkgsInstall         : success
+
+------------------------ dependent program tests -------------------------
+checking for dependent programs...
+
+which tcsh           : /usr/bin/tcsh
+tcsh version         : 6.24.10
+which Xvfb           : /usr/bin/Xvfb
+
+checking for R packages...
+    rPkgsInstall -pkgs ALL -check : FAILURE
+        
+        oo Warning: 
+           These packages are not installed on the computer: gamm4!
+        
+
+R RHOME : /usr/lib/R
+
+------------------------------ python libs -------------------------------
+
+++ module loaded: matplotlib.pyplot
+   module file : /home/osasu/anaconda3/lib/python3.12/site-packages/matplotlib/pyplot.py
+   matplotlib version : 3.9.2
+
+++ module loaded: flask
+   module file : /home/osasu/anaconda3/lib/python3.12/site-packages/flask/__init__.py
+   flask version : 3.0.3
+
+** failed to load module flask_cors
+-- flask_cors is not required, but is desirable
+
+-------------------------------- env vars --------------------------------
+PATH                       = /home/osasu/anaconda3/bin:/home/osasu/anaconda3/condabin:/usr/local/cuda-12.9/bin:/usr/local/cuda-12.9/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/osasu/abin
+
+PYTHONPATH                 = 
+R_LIBS                     = /home/osasu/R
+LD_LIBRARY_PATH            = /usr/local/cuda-12.9/lib64:/usr/local/cuda-12.9/lib64
+DYLD_LIBRARY_PATH          = 
+DYLD_FALLBACK_LIBRARY_PATH = 
+CONDA_SHLVL                = 1
+CONDA_DEFAULT_ENV          = base
+CC                         = 
+HOMEBREW_PREFIX            = 
+
+----------------------------- eval dot files -----------------------------
+
+----------- AFNI $HOME files -----------
+
+    .afnirc                   : found
+    .sumarc                   : found
+    .afni/help/all_progs.COMP : found
+
+--------- shell startup files ----------
+
+   -- good: .tcshrc seems to contain 'source .cshrc'
+   -- considered operations: path, apsearch
+   
+   -- note: followers should not need edits, so edit flags should be 0
+      (have 1 follower(s), which can be ignored)
+   
+   dot file test : want 1 modifications across 3 files:
+   
+      file             path  flatdir  apsearch        follower
+      ---------------  ----  -------  --------        --------
+      .cshrc           0     0        1               0     
+      .tcshrc          0     0        0               1     
+      .bashrc          0     0        0               0     
+   
+------------------------------ data checks -------------------------------
+data dir : found AFNI_data6   under $HOME (494894M Avail)
+           top history: ...d GroupAna_cases/gen_datatables/ggc_dt_commands.tcsh
+data dir : found AFNI_demos   under $HOME
+           top history: 22 May 2025 [taylorp]: update subject QC directories
+data dir : found suma_demo    under $HOME
+           top history: ...s_New/data/Build_tmp on Mon Mar  4 11:56:45 EST 2013
+data dir : found afni_handouts under $HOME
+atlas    : found TT_N27+tlrc  under /home/osasu/abin
+
+------------------------------ OS specific -------------------------------
+which apt-get        : /usr/bin/apt-get
+apt-get version      : apt 2.8.3 (amd64)
+
+which git            : /usr/bin/git
+git version          : git version 2.43.0
+which gcc            : /usr/bin/gcc
+gcc version          : gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+
+have Ubuntu system: ubuntu 24.04 Noble Numbat
+have Ubuntu afni  : Precompiled binary linux_ubuntu_24_64: May 23 2025 
+
+=========================  summary, please fix:  =========================
+*  just be aware: login shell 'bash', but our code examples use 'tcsh'
+*  missing R packages (see rPkgsInstall)
+*  dot file test : want 1 modifications across 3 files:
+
